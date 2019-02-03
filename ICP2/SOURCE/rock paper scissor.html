@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ROCK PAPER SCISSOR</title>
+    <script>
+        let user=prompt("rock,paper,scissor?");//letting user to select one option
+        console.log(user);//printing user choice to console
+        let comp= Math.random()*100;//letting comp select a random number number between 0 to 100
+        console.log(comp);//printing that random number to console
+
+
+        if(comp<=30){
+            comp="rock";//if the selected random number is leaa thsn or equals to 30 comp chooses rock
+        }
+        else if(comp > 30 && comp < 70){
+            comp="paper";//if the selected random number is in between 30 and 70 comp chooses paper
+        }
+        else {
+            comp="scissor";//if the selected random number is greater than 70 comp chooses scissor
+        }
+        console.log(comp);//prints the comp choice
+        if(user==comp){
+            console.log("DRAW!!!")//compares both user and comp values if they are equal it displays draw!
+        }
+        else if(user=="scissor"&&comp=="paper"){
+            console.log("scissor cuts paper so USER WINS!!")//compares both values and displays cooresponding output
+        }
+        else if(user=="paper"&&comp=="scissor"){
+            console.log("scissor cuts paper so COMP WINS!!")//compares both values and displays cooresponding output
+        }
+        else if(user=="rock"&&comp=="paper"){
+            console.log("paper covers rock so COMP WINS!!")//compares both values and displays cooresponding output
+        }
+        else if(user=="paper"&&comp=="rock"){
+            console.log("paper covers rock so USER WINS!!!")//compares both values and displays cooresponding output
+        }
+        else if(user=="scissor"&&comp=="rock"){
+            console.log("rock crushes scissor so COMP WINS!!")//compares both values and displays cooresponding output
+        }
+        else{
+            console.log("rock crushes scissor so USER WINS")//compares both values and displays cooresponding output
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
