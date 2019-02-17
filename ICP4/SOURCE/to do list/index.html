@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo in Angular.js</title>
+    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300italic,400italic,500' rel='stylesheet'
+          type='text/css'>
+    <script src="https://use.fontawesome.com/21be5f2318.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <script src="todo.js"></script>
+</head>
+<body background-imgage =url("https://images.pexels.com/photos/29435/landscape-sky-night-stars-29435.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500")></body>
+<body ng-app="myApp" ng-controller="toCtrl" style="text-align: left "><!--aligning text to left and defining angularjs application and application controller-->
+
+<h2 style="text-align: left;color: lavenderblush">TO DO LIST</h2><!--declaring heading and aligning it to left-->
+
+<form ng-submit="todoAdd()"><!--specifying input bar -->
+    <input type="text" ng-model="todoInput" size="50" placeholder="Add New"  >
+    <input type= "submit" value= "Add New" style="background: lavenderblush">
+</form>
+
+<br>
+
+<div ng-repeat="x in todoList">
+    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+</div>
+
+<p><button ng-click="remove()" style="background: lavenderblush">Remove marked</button></p><!--remove buyyon specifications-->
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('toCtrl', function($scope) {
+        $scope.todoList = [{todoText:'honey', done:false}];
+
+        $scope.todoAdd = function() {<!--function to add data-->
+            $scope.todoList.push({todoText:$scope.todoInput, done:false});
+            $scope.todoInput = "";
+        };
+
+        $scope.remove = function() {<!--function to remove checked elements-->
+            var oldList = $scope.todoList;
+            $scope.todoList = [];
+            angular.forEach(oldList, function(x) {
+                if (!x.done) $scope.todoList.push(x);
+            });
+        };
+    });
+</script>
+
+</body>
+</html>
+

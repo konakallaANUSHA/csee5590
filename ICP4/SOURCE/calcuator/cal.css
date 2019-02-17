@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: lightcyan;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    position: relative;
+}
+
+
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.whole-container {
+    position: absolute;
+    left: 50%;
+    margin: 80px 0 0 -170px;
+    box-shadow: 1px 2px 3px #9c9c9c, -1px -2px 3px #8e8c8c;
+}
+
+
+.result-container {
+    border: 1px solid black;
+    background: lavenderblush;
+    padding: 20px;
+    font-size: 20px;
+    width: 350px;
+    text-align: right;
+    color: black;
+}
+
+.result-item {
+    font-size: 22px;
+}
+
+.number-modify-container {
+    width: 350px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.number-container {
+    width: 250px;
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row wrap;
+}
+
+.number-inner-container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.modify-container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.number-item, .modify-item {
+    flex: 1 1 auto;
+    padding: 30px;
+    color: black;
+    font-size: 20px;
+    border: 1px solid black;
+    background: lavenderblush;
+}
+
+.modify-item {
+    font-size: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.number-item:hover, .modify-item:hover {
+    background:  ;
+    cursor: pointer;
+}
+
+.clear-button {
+    background: black;
+    font-size: 20px;
+    margin-right: -11px;
+    border: 1px solid #dedede;
+    border-radius: 50%;
+    color: #c7c7c7;
+}
+
+.result-button {
+    background: lemonchiffon;
+    width: 350px;
+    font-size: 35px;
+    color: black;
+    padding: 10px;
+    font-weight: bold;
+    transition: background 0.35s ease;
+    border: 1px solid black;
+}
